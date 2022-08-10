@@ -1,0 +1,30 @@
+{
+  "name": "real-time-client-server-course",
+  "version": "1.0.0",
+  "description": "### Сервер #### Перед запуском вкажіть необхідний файл поле \"script\" в package.json  #### `npm start` - для запуску сервера",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm install --prefix client && npm install --prefix server && npm install",
+    "client": "npm start --prefix client",
+    "websocket": "npm run websocket --prefix server",
+    "longpulling": "npm run longpulling --prefix server",
+    "eventsource": "npm run eventsource --prefix server",
+    "socket": "concurrently \"npm run websocket\" \"npm run client\"",
+    "event": "concurrently \"npm run eventsource\" \"npm run client\"",
+    "pulling": "concurrently \"npm run longpulling\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrAndriy/real-time-client-server-course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrAndriy/real-time-client-server-course/issues"
+  },
+  "homepage": "https://github.com/MrAndriy/real-time-client-server-course#readme",
+  "dependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
